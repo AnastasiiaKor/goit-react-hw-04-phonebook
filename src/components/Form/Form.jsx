@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
+import PropTypes from 'prop-types';
 
 const INITIAL_STATE = {
   name: '',
@@ -9,7 +10,9 @@ class Form extends Component {
   state = {
     ...INITIAL_STATE,
   };
-
+  static propTypes = {
+    onSubmit: PropTypes.func.isRequired,
+  };
   nameInputId = nanoid();
 
   numberInputId = nanoid();

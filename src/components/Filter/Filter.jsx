@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 function Filter({ value, onChange }) {
   return (
     <form>
@@ -8,5 +9,8 @@ function Filter({ value, onChange }) {
     </form>
   );
 }
-
+Filter.propTypes = {
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+};
 export default Filter;
