@@ -1,13 +1,14 @@
 import PropTypes from 'prop-types';
+import { Name, Button } from './ContactItem.styled';
 function ContactItem({ name, number, id, onClick }) {
   return (
     <>
       <p>
-        {name}: {number}
+        <Name>{name}:</Name> {number}
       </p>
-      <button id={id} type="button" onClick={onClick}>
+      <Button id={id} type="button" onClick={onClick}>
         Delete
-      </button>
+      </Button>
     </>
   );
 }

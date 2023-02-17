@@ -1,10 +1,11 @@
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
-import Form from './Form';
-import Filter from './Filter';
-import ContactList from './ContactsList';
+import ContactForm from '../ContactForm';
+import Filter from '../Filter';
+import ContactList from '../ContactsList';
+import { Wrapper } from './App.styled';
 
-export class App extends Component {
+class App extends Component {
   state = {
     contacts: [
       { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
@@ -42,17 +43,17 @@ export class App extends Component {
     );
 
     return (
-      <div>
+      <Wrapper>
         <h1>Phonebook</h1>
-        <Form onSubmit={this.formSubmitHandler} />
-
+        <ContactForm onSubmit={this.formSubmitHandler} />
         <h2>Contacts</h2>
         <Filter value={this.state.filter} onChange={this.filterChangeHandler} />
         <ContactList
           contacts={filteredContacts}
           onClick={this.deleteContactHandler}
         />
-      </div>
+      </Wrapper>
     );
   }
 }
+export default App;
