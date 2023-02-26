@@ -20,7 +20,7 @@ const schema = Yup.object().shape({
   name: Yup.string()
     .matches(
       /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/,
-      'The name may contain only letters and '
+      'The name may contain only letters numerals'
     )
     .min(3, 'Too short')
     .max(30, 'Too long')
@@ -28,7 +28,8 @@ const schema = Yup.object().shape({
     .trim(),
   number: Yup.string()
     .matches(
-      /\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}/
+      /\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}/,
+      'The number may contain only letters'
     )
     .min(7, 'Too short')
     .max(20, 'Too long')
