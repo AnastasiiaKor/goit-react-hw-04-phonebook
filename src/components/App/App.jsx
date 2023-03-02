@@ -11,11 +11,7 @@ function App() {
   const [filter, setFilter] = useState('');
   const [showModal, setShowModal] = useState(false);
   const [contacts, setContacts] = useState(() => {
-    if (JSON.parse(localStorage.getItem('contacts'))) {
-      return JSON.parse(localStorage.getItem('contacts'));
-    } else {
-      return [];
-    }
+    return JSON.parse(localStorage.getItem('contacts')) ?? [];
   });
   const [filteredContacts, setFilteredContacts] = useState([]);
 
